@@ -108,9 +108,10 @@ body {
   .composition__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
+    border-radius: 1px;
     position: absolute;
-    z-index: 10; }
+    z-index: 10;
+    outline-offset: 1rem; }
     .composition__photo--p1 {
       left: 0rem;
       top: -2rem; }
@@ -121,8 +122,12 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5); }
+      outline: 1rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+    .composition__photo:hover .composition__photo__photo:not(:hover) {
+      transform: scale(0.95); }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
