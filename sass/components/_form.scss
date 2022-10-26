@@ -45,9 +45,14 @@
         width: 50%;
         display: inline;
     }
+    &__radio-input{
+        display: none;
+    }
     &__radio-label {
+        font-size:$default-font-size;
         cursor: pointer;
         position: relative;
+        padding-left:4.5rem;
     }
     &__radio-button{
         height: 3rem;
@@ -57,7 +62,7 @@
         display: inline-block;
         position: absolute;
         left:0;
-        top:0;
+        top:-.4rem;
         transform: translateX(-2.3rem);
         
         &::after{
@@ -72,6 +77,12 @@
             transform: translate(-50%, -50%);
             z-index: 999;
             background-color:$color-primary;
+            opacity: 0;
+            transition: opacity .2s;
         }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after{
+        opacity: 1;
     }
 }
